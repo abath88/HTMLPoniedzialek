@@ -9,3 +9,8 @@ function handleMenu(){
         event.target.setAttribute('class', '');
     }
 }
+
+
+window.onload =  () => document.getElementById('animate').setAttribute('class', 'animate');
+
+    

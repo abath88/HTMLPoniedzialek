@@ -113,6 +113,11 @@ header {
     color: #fff;
 }
 
+/* END HAMBURGER */
+
+
+
+/* MOBILE MENU */
 .main-menu-mobile {
     position: fixed;
     width: 100vw;
@@ -166,4 +171,105 @@ header {
 
 .main-menu-mobile ul li a:hover::before {
     width: 100%;
+}
+
+/* END MOBILE MENU */
+
+
+/* SECTION HERO */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    margin-top: -93px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.hero .wrapper h1 {
+    font-size: 70px;
+    font-family: 'neuzeit-grotesk', sans-serif;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+
+    opacity: 0;
+    margin-top: -70px;
+
+    transition: all 1s;
+}
+
+.animate {
+    opacity: 1!important;
+    margin-top: 0!important;
+}
+
+.hero .scroll-arrow {
+    position: absolute;
+    left: calc(50% - 15px);
+    bottom: 0;
+    width: 30px;
+    height: 50px;
+    overflow: hidden;
+
+    animation: arrowJump .6s infinite;
+}
+
+.hero .scroll-arrow .arrow { 
+    position: relative;
+
+    width: 4px;
+    height: 47px;
+
+    margin: 0 auto;
+    background-color: #000;
+}
+
+.hero .scroll-arrow .arrow:before, .hero .scroll-arrow .arrow:after{
+    position: absolute;
+    content: "";
+    height: 50px;
+    width: 4px;
+    background-color: black;
+    bottom: -28px;
+}
+
+.hero .scroll-arrow .arrow:before {
+    transform: rotate(-45deg);
+}
+
+.hero .scroll-arrow .arrow:after {
+    transform: rotate(45deg);
+}
+
+@keyframes arrowJump {
+    0% {
+        bottom: 0px;
+    }
+
+    50% {
+        bottom: 10px;
+    }
+
+    100% {
+        bottom: 0px
+    }
+}
+
+/* END HERO */
+
+.last {
+    width: 100%;
+    height: 100vh;
+    background-color: red;
 }
