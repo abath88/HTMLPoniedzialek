@@ -288,7 +288,7 @@ footer .wrapper:after {
 
 footer .wrapper .left {
     width: 40%;
-    color: #fff;
+    color: #989898;
     font-size: 14px;
     line-height: 1.75;
 }
@@ -296,10 +296,83 @@ footer .wrapper .left {
 footer .wrapper .left h1 {
     font-family: 'neuzeit-grotesk', sans-serif;
     font-size: 36px;
+    margin-top: 0;
+    color: #fff;
+}
+
+footer .wrapper .left a,  
+footer .wrapper .right .column a{
+    font-family: 'neuzeit-grotesk', sans-serif;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    color: #989898;
+    transition: all .3s;
+}
+
+footer .wrapper .left a:before, 
+footer .wrapper .right .column a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #989898;
+
+    transition: all .3s;
+}
+
+footer .wrapper .left a:hover:before, 
+footer .wrapper .right .column a:hover:before {
+    width: 100%;
+    background-color: #fff;
+}
+
+footer .wrapper .left a:hover,
+footer .wrapper .right .column a:hover {
+    color: #fff;
 }
 
 footer .wrapper .right {
     width: 60%;
+    display: flex;
+    padding-left: 100px;
+}
+
+footer .wrapper .right .column {
+    width: 33.33333%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding-top: 12px;
+}
+
+footer .wrapper .right .column h2 {
+    font-family: "neuzait-grotesk", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 26px;
+}
+
+
+footer .wrapper .right .column p {
+    margin: 0;
+    
+    font-family: "neuzait-grotesk", sans-serif;
+    padding-bottom: 8px;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+footer .wrapper .right .column ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+footer .wrapper .right .column ul li {
+    padding-bottom: 10px;
 }
 
 /* FOOTER */
