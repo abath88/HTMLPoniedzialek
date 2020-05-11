@@ -287,10 +287,26 @@ footer .wrapper:after {
 }
 
 footer .wrapper .left {
-    width: 40%;
+    width: 100%;
     color: #989898;
     font-size: 14px;
     line-height: 1.75;
+}
+
+footer .wrapper .right {
+    width: 60%;
+    display: none;
+    padding-left: 100px;
+}
+
+@media only screen and (min-width: 1024px) {
+    footer .wrapper .left {
+        width: 40%;
+    }
+
+    footer .wrapper .right {
+        display: flex;
+    }
 }
 
 footer .wrapper .left h1 {
@@ -334,12 +350,6 @@ footer .wrapper .right .column a:hover {
     color: #fff;
 }
 
-footer .wrapper .right {
-    width: 60%;
-    display: flex;
-    padding-left: 100px;
-}
-
 footer .wrapper .right .column {
     width: 33.33333%;
     color: #fff;
@@ -376,3 +386,60 @@ footer .wrapper .right .column ul li {
 }
 
 /* FOOTER */
+
+
+/* Karsuela */
+
+.last-articles {
+    width: 100vw;
+    height: 600px;
+}
+
+.last-articles .viewer {
+    position: relative;
+    width: calc(100vw - 100px);
+    margin: 50px 50px 0 50px;
+    height: 500px;
+
+    overflow: hidden;
+}
+
+.last-articles .viewer .plate {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    display: flex;
+
+    transition: all .6s;
+}
+
+.last-articles .viewer .plate .block {
+    position: relative;
+    width: calc(100vw - 100px);
+    height: 100%;
+}
+
+.last-articles .viewer .plate .block .img{
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+    width: 100%;
+}
+
+.last-articles .viewer .plate .block h1 {
+    margin-left: 50px;
+}
+
+.last-articles .btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: calc(100% - 200px);
+}
+
+.last-articles .btn-container .btn {
+    cursor: pointer;
+}
+
+/* end */
