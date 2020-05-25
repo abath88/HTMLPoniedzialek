@@ -7,10 +7,12 @@
 
     <body>
         <header>
-            <div class="logo"></div>
+            <div id="logo" class="logo">
+                <span>.M</span>
+            </div>
 
-            <div class="hamburger" onclick="handleMenu()">
-                <span>Menu</span>
+            <div class="hamburger" >
+                <span onclick="handleMenu()">Menu</span>
                 <div class="main-menu-mobile">
                     <ul>
                         <li>
@@ -63,6 +65,41 @@
             </div>
         </section>
 
+        <section class="cards">
+            <div class="cards-container">
+                <div class="card">
+                    <img src="secure.png" class="icon" />
+                    <div class="card-text">
+                        <h1>Secure</h1>
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.  
+                        </p>
+                        <button>Read more</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="list.png" class="icon" />
+                    <div class="card-text">
+                        <h1>Easy shop</h1>
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.  
+                        </p>
+                        <button>Read more</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="quick.png" class="icon" />
+                    <div class="card-text">
+                        <h1>Fast delivery</h1>
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.  
+                        </p>
+                        <button>Read more</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="about">
             <div class="container">
                 <div class="text">
@@ -76,19 +113,42 @@
                     <p>    
                         Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
                     </p>
-                    
                 </div>
             
                 <div class="story">
                     <h4>Story Timeline</h4>
                     <div class="timeline">
-                        <div class="col">
+                        <div class="col dot">
+                            <div class="date">
+                                <h1>May '20</h1>
+                            </div>
+                            <div class="event">
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+                            </div>
+                            <div class="date">
+                                <h1>May '20</h1>
+                            </div>
+                            <div class="event">
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+                            </div>
                             <div class="date">
                                 <h1>May '20</h1>
                             </div>
                         </div>
                         <div class="line"></div>
                         <div class="col">
+                            <div class="event">
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+                            </div>
+                            <div class="date">
+                                <h1>May '20</h1>
+                            </div>
+                            <div class="event">
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+                            </div>
+                            <div class="date">
+                                <h1>May '20</h1>
+                            </div>
                             <div class="event">
                                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
                             </div>
@@ -104,29 +164,52 @@
                 <div id="plate" class="plate">
                     <div class="block">
                         <div class="img" style="background-image: url(block1.jpg);"></div>
-                        <h1>Programowanie dla początkujących</h1>
+                        <div class="title">
+                            <div class="btn" onclick="prev()">
+                                <span>&larr;</span> NASTĘPNY
+                            </div>
+                            <h1>Programowanie dla początkujących</h1>
+                            <div class="btn" onclick="next()">
+                                POPRZEDNI <span>&rarr;</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="block">
                         <div class="img" style="background-image: url(block2.jpg);"></div>
-                        <h1>Mockup produków dla zaawansowanych</h1>
+                        <div class="title">
+                            <div class="btn" onclick="prev()">
+                                <span>&larr;</span> NASTĘPNY
+                            </div>
+                            <h1>Mockup produków dla zaawansowanych</h1>
+                            <div class="btn" onclick="next()">
+                                POPRZEDNI <span>&rarr;</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="block">
                         <div class="img" style="background-image: url(block3.jpg);"></div>
-                        <h1>Wybór sprzętu Apple</h1>
+                        <div class="title">
+                            <div class="btn" onclick="prev()">
+                                <span>&larr;</span> NASTĘPNY
+                            </div>
+                            <h1>Wybór sprzętu Apple</h1>
+                            <div class="btn" onclick="next()">
+                                POPRZEDNI <span>&rarr;</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="block">
                         <div class="img" style="background-image: url(block4.jpg);"></div>
-                        <h1>Kawa w pracy, o czym warto pamiętać</h1>
+                        <div class="title">
+                            <div class="btn" onclick="prev()">
+                                <span>&larr;</span> NASTĘPNY
+                            </div>
+                            <h1>Kawa w pracy, o czym warto pamiętać</h1>
+                            <div class="btn" onclick="next()">
+                                POPRZEDNI <span>&rarr;</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="btn-container">
-                <div class="btn" onclick="prev()">
-                    <span>&larr;</span> poprzedni
-                </div>
-                <div class="btn" onclick="next()">
-                    następny <span>&rarr;</span>
                 </div>
             </div>
         </section>

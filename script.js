@@ -5,8 +5,10 @@ function handleMenu(){
 
     if(open) {
         event.target.setAttribute('class', 'open');
+        document.getElementById('logo').setAttribute('class', 'logo open')
     } else {
         event.target.setAttribute('class', '');
+        document.getElementById('logo').setAttribute('class', 'logo');
     }
 }
 
