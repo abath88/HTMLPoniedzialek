@@ -13,6 +13,10 @@ header {
     padding: 25px 50px 25px 50px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .logo {
     width: 33px;
     height: 33px;
@@ -23,7 +27,7 @@ header {
     align-items: center;
     font-size: 26px;
     z-index: 9999;
-
+   
     color: black;
 }
 
@@ -197,8 +201,26 @@ header {
 
 
 /* SECTION HERO */
-
 .hero {
+    margin-top: 0;
+    margin-left: 200px;
+    margin-bottom: 150px;
+    font-weight: 900;
+}
+
+.hero h1 {
+    font-size: 60px;
+    font-family: 'neuzeit-grotesk';
+    margin-bottom: 0;
+}
+
+.hero h4 {
+    margin-top: 0;
+    font-family: 'neuzeit-grotesk';
+    font-size: 20px;
+}
+
+.hero-home {
     position: relative;
     height: 100vh;
     width: 100%;
@@ -211,12 +233,12 @@ header {
     flex-direction: column;
 }
 
-.wrapper {
+.hero-home .wrapper {
     margin: 0 auto;
     max-width: 600px;
 }
 
-.hero .wrapper h1 {
+.hero-home .wrapper h1 {
     font-size: 70px;
     font-family: 'neuzeit-grotesk', sans-serif;
     text-transform: uppercase;
@@ -234,7 +256,7 @@ header {
     margin-top: 0!important;
 }
 
-.hero .arrow {
+.hero-home .arrow {
     position: absolute;
     left: 50%;
     bottom: 25px;
@@ -244,7 +266,7 @@ header {
     overflow: hidden;
 }
 
-.hero .arrow:before {
+.hero-home .arrow:before {
     content: "";
     position: absolute;
     top: 0;
@@ -453,6 +475,17 @@ footer .wrapper .right .column ul li {
 .last-articles .viewer .plate .block .title h1 {
     font-family: 'neuzeit-grotesk', sans-serif;
     font-size: 30px;
+    padding-left: 20px;
+}
+
+.last-articles .viewer .plate .block .title .btn .text {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .last-articles .viewer .plate .block .title .btn .text {
+        display: inline;
+    }
 }
 
 .last-articles .viewer .plate .block .title .btn {
@@ -675,24 +708,46 @@ footer .wrapper .right .column ul li {
 /* start cards */
 
 .cards {
-    height: 600px;
-    padding: 0 50px 50px 50px;
+    padding: 50px;
     background-color: rgba(0,0,0,.1);
 }
 
 .cards-container {
     display: flex;
+    flex-direction: column;
     height: 100%;
 }
 
+@media only screen and (min-width: 1100px) {
+    .cards-container {
+        flex-direction: row;
+    }
+}
+
 .card {
-    width: calc(33.33333% - 100px);
+    width: calc(100% - 100px);
     height: calc(100% - 50px);
     padding: 50px;
 }
 
+@media only screen and (min-width: 1100px) {
+    .card {
+        width: calc(33.33333% - 100px);
+        padding: 50px;
+    }
+}
+
 .cards .cards-container .card .icon {
-    width: 100%;
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 1100px) {
+    .cards .cards-container .card .icon {
+        width: 100%;
+        margin: 0;
+    }
 }
 
 .cards .cards-container .card .card-text {
@@ -736,3 +791,61 @@ footer .wrapper .right .column ul li {
 }
 
 /* end cards */
+
+
+
+.news {
+    width: 960px;
+    margin: 0 auto;
+    margin-bottom: 150px;
+}
+
+.news .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.news .container .block {
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 50px 0;
+}
+
+.news .container .block .wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.news .container .block .wrapper .picture {
+    width: 66.6666%;
+    padding-right: 50px;
+}
+
+.news .container .block .wrapper .picture .img {
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+}
+
+.news .container .block .wrapper .text {
+    width: 33.33333%;
+    font-family: 'neuzeit-grotesk';
+    display: flex;
+    flex-direction: column;
+}
+
+.news .container .block .wrapper .text p {
+    font-family: "adriane", serif;
+    color: rgba(0,0,0,.5)
+}
+
+.news .container .block .wrapper .text .link {
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 14px;
+}
