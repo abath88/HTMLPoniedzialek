@@ -1,0 +1,5 @@
+@mixin basic-transition($time, $timing) {
+    -webkit-transition: all $time#{s};
+    -o-transition: all $time#{s};
+    transition: all $time#{s};
+}

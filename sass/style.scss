@@ -1,0 +1,636 @@
+@import './basic.scss';
+
+.logo {
+    width: 33px;
+    height: 33px;
+    font-family: $primary-font;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    z-index: 9999;
+   
+    color: black;
+}
+
+.logo.open {
+    color: white;
+} 
+
+.main-menu {
+    position: relative;
+    display: none;
+
+    @media only screen and (min-width: 960px) {
+        display: block;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li a {
+            display: block;
+            padding: 10px 0;
+            color: $primary-color; 
+            font-size: 16px;
+            letter-spacing: .6px;
+            position: relative;
+            margin-right: 50px;
+            text-decoration: none;
+            
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 10px;
+                left: 0;
+                display: block;
+                height: 2px;
+                width: 0;
+                background-color: $primary-color;
+                @include basic-transition(.3, '');
+            }
+
+            &:hover::before {
+                width: 100%;
+            }
+        }
+    }
+}
+
+/* HAMBURGER MENU */
+
+.hamburger {
+    position: relative;
+    display: block;
+
+    @media only screen and (min-width: 960px) {
+        display: none;
+    }
+
+    span {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        padding-left: 20px;
+        z-index: 9999;
+
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            height: 1px;
+            width: 15px;
+            background-color: black;
+            @include basic-transition(.3, '');
+        }
+
+        &::before {
+            transform: translateY(-3px);
+        }
+
+        &::after {
+            transform: translateY(3px);
+        }
+
+        &.open {
+            color: #fff;
+
+            &::before {
+                background-color: #fff;
+                transform: rotate(-45deg);
+            }
+
+            &::after {
+                background-color: #fff;
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+
+/* END HAMBURGER */
+
+
+/* MOBILE MENU */
+.main-menu-mobile {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: #000000;
+    display: none;
+
+    .hamburger span.open ~ & {
+        display: block;
+    }
+
+    @media only screen and (min-width: 960px) {
+        display: none;
+    }
+
+    ul{
+        height: 100%;
+        color: #fff;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        li a {
+            display: block;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            letter-spacing: .6px;
+            position: relative;
+            text-decoration: none;
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 10px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: #fff;
+                @include basic-transition(.3, '');
+            }
+
+            &:hover::before {
+                width: 100%;
+            }
+        }
+    }
+}
+
+/* END MOBILE MENU */
+
+
+@import './components/hero.scss';
+@import './components/footer.scss';
+
+
+/* Karsuela */
+
+.last-articles {
+    height: 600px;
+}
+
+.last-articles .viewer {
+    position: relative;
+    width: calc(100vw - 100px);
+    margin: 50px auto 0 auto;
+    height: 500px;
+
+    overflow: hidden;
+}
+
+.last-articles .viewer .plate {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    display: flex;
+
+    @include basic-transition(.6, '');
+}
+
+.last-articles .viewer .plate .block {
+    position: relative;
+    width: calc(100vw - 100px);
+    height: 100%;
+}
+
+.last-articles .viewer .plate .block .img{
+    background-size: cover;
+    background-position: center;
+    height: 80%;
+    width: 100%;
+}
+
+.last-articles .viewer .plate .block .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.last-articles .viewer .plate .block .title h1 {
+    font-family: 'neuzeit-grotesk', sans-serif;
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+.last-articles .viewer .plate .block .title .btn .text {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .last-articles .viewer .plate .block .title .btn .text {
+        display: inline;
+    }
+}
+
+.last-articles .viewer .plate .block .title .btn {
+    font-family: 'neuzeit-grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* end */
+
+/* about */
+
+.about {
+    position: relative;
+    margin-top: 150px;
+    width: 100%;
+}
+
+.about .container {
+    width: 100%;
+    margin: 0 10px;
+}
+
+@media only screen and (min-width: 540px){
+    .about .container {
+        width: 540px;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .about .container {
+        width: 720px;
+        margin: 0 auto;
+    }
+}
+
+
+@media only screen and (min-width: 980px){
+    .about .container {
+        width: 960px;
+    }
+}
+
+
+.about .container .text h1 {
+    font-size: 60px;
+    font-family: 'neuzeit-grotesk';
+    text-transform: uppercase;
+}
+
+.about .container .text p {
+    color: rgba(0,0,0,.59);
+    font-size: 16px;
+}
+
+.about .container .text blockquote {
+    position: relative;
+    color: #000;
+}
+
+.about .container .text blockquote:before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: #000;
+    left: -10px;
+}
+
+.about .container .story {
+    position: relative;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.about .container .story h4::before {
+    content: "";
+    position: absolute;
+
+    height: 1px;
+    width: calc(100% + 100px);
+
+    background-color: #000;
+
+    left: -50px;
+    bottom: -25px;
+}
+
+.about .container .story h4 {
+    position: relative;
+    display: inline-block;
+    font-family: 'neuzeit-grotesk';
+    font-size: 28px;
+}
+
+.about .container .story .timeline{
+    position: relative;
+    width: 100%;
+    height: 1100px;
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.about .container .story .timeline .col {
+    width: 40%;
+    height: 100%;
+}
+.about .container .story .timeline .col .date, 
+.about .container .story .timeline .col .event {
+    height: 100px;
+}
+
+.about .container .story .timeline .line {
+    position: relative;
+    width: 1px;
+    height: 100%;
+    background-color: #000;
+}
+
+.about .container .story .timeline .line::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100px;
+    background-color: #000;
+    top: 0;
+    left: -50px;
+}
+
+.about .container .story .timeline .line::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100px;
+    background-color: #000;
+    bottom: 0;
+    left: -50px;
+}
+
+.about .container .story .timeline .col:first-child {
+    margin-right: 80px;
+}
+
+.about .container .story .timeline .col:last-child {
+    margin-left: 80px;
+}
+
+.about .container .story .timeline .col .date {
+    position: relative;
+    margin-top: 100px;
+    
+}
+
+.about .container .story .timeline .col.dot > *::before {
+    content: "";
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: #fff;
+    
+    border: 1px solid #000;
+    border-radius: 50%;
+
+    right: -91px;
+    top: 6px;
+
+    z-index: 10;
+}
+
+.about .container .story .timeline .col.dot > *::after {
+    content: "";
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    background-color: #000;
+    border-radius: 50%;
+
+    right: -85px;
+    top: 12px;
+    z-index: 20;
+
+}
+
+.about .container .story .timeline .col .date h1 {
+    display: block;
+    width: 100px;
+    background-color: #000;
+    color: #fff;
+
+    font-family: 'neuzeit-grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 0;
+}
+
+.about .container .story .timeline .col.dot .date h1 {
+    margin-left: auto;
+}
+
+.about .container .story .timeline .col .event {
+    position: relative;
+    margin-top: 95px;
+    text-align: left;
+}
+
+/* end about */
+
+
+/* start cards */
+
+.cards {
+    padding: 50px;
+    background-color: rgba(0,0,0,.1);
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+@media only screen and (min-width: 1100px) {
+    .cards-container {
+        flex-direction: row;
+    }
+}
+
+.card {
+    width: calc(100% - 100px);
+    height: calc(100% - 50px);
+    padding: 50px;
+}
+
+@media only screen and (min-width: 1100px) {
+    .card {
+        width: calc(33.33333% - 100px);
+        padding: 50px;
+    }
+}
+
+.cards .cards-container .card .icon {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 1100px) {
+    .cards .cards-container .card .icon {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+.cards .cards-container .card .card-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.cards .cards-container .card .card-text h1 {
+    font-family: 'neuzeit-grotesk', sans-serif;
+    font-size: 40px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,.59);
+}
+
+.cards .cards-container .card .card-text p {
+    color: rgba(0,0,0,.59);
+    height: 168px;
+}
+
+.cards .cards-container .card .card-text button {
+    border: 1px solid #000;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 15px 0;
+    font-family: 'neuzeit-grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: auto;
+    cursor: pointer;
+}
+
+.cards .cards-container .card .card-text button:hover {
+    background-color: black;
+    color: white;
+
+    @include basic-transition(.3, '');
+}
+
+.cards .cards-container .card .card-text button:focus {
+    outline: 0;
+}
+
+/* end cards */
+
+
+
+.news {
+    width: 960px;
+    margin: 0 auto;
+    margin-bottom: 150px;
+}
+
+.news .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.news .container .block {
+    width: 100%;
+    margin-bottom: 150px;
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 50px 0;
+    opacity: 0;
+    translate: translateY(100px);
+
+    @include basic-transition(.8, 'ease');
+}
+
+.news .container .block .wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.news .container .block .wrapper .picture {
+    position: relative;
+    width: 66.6666%;
+    padding-right: 50px;
+    height: 350px;
+}
+
+
+
+.news .container .block .wrapper .picture .img,
+.news .container .block .wrapper .picture .cover {
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: calc(100% - 50px);
+
+    @include basic-transition(.35, 'ease');
+    transition-delay: .6s;
+}
+
+.news .container .block .wrapper .picture .cover {
+    transition-delay: .35s;
+    background-color: $primary-color;
+} 
+
+.news .container .block .wrapper .text {
+    width: 33.33333%;
+    font-family: 'neuzeit-grotesk';
+    display: flex;
+    flex-direction: column;
+}
+
+.news .container .block .wrapper .text p {
+    font-family: "adriane", serif;
+    color: rgba(0,0,0,.5)
+}
+
+.news .container .block .wrapper .text .link {
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+
+.news .container .block.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.news .container .block.visible .wrapper .picture .cover,
+.news .container .block.visible .wrapper .picture .img {
+    height: 100%;
+}
+
+@for $i from 1 to 13 {
+    .col-#{$i} {
+        width: $i*8.333333%;
+    }
+}
