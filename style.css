@@ -203,6 +203,33 @@ a {
         height: 40px;
         background-color: #000;
         animation: slide 2s infinite; }
+  .hero-article {
+    position: relative;
+    height: 90vh;
+    width: 100%;
+    margin-top: -93px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center; }
+    .hero-article .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(white, rgba(255, 255, 255, 0.7) 20%, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%); }
+    .hero-article .title {
+      position: absolute;
+      width: calc(100% - 100px);
+      bottom: 0;
+      left: 0;
+      padding: 0px 50px;
+      background-color: rgba(255, 255, 255, 0.7); }
+      .hero-article .title h1 {
+        font-size: 36px; }
 
 .animate {
   opacity: 1 !important;
@@ -583,81 +610,92 @@ footer {
   outline: 0; }
 
 /* end cards */
-.news {
+.news, .events {
   width: 960px;
   margin: 0 auto;
   margin-bottom: 150px; }
+  .news .container, .events .container {
+    display: flex;
+    flex-direction: column; }
+    .news .container .block, .events .container .block {
+      width: 100%;
+      margin-bottom: 150px;
+      display: block;
+      text-decoration: none;
+      color: black;
+      padding: 50px 0;
+      opacity: 0;
+      translate: translateY(100px);
+      -webkit-transition: all 0.8s;
+      -o-transition: all 0.8s;
+      transition: all 0.8s; }
+      .news .container .block .wrapper, .events .container .block .wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center; }
+        .news .container .block .wrapper .picture, .events .container .block .wrapper .picture {
+          position: relative;
+          width: 66.6666%;
+          padding-right: 50px;
+          height: 350px; }
+          .news .container .block .wrapper .picture .img, .news .container .block .wrapper .picture .cover, .events .container .block .wrapper .picture .img, .events .container .block .wrapper .picture .cover {
+            position: absolute;
+            background-size: cover;
+            background-position: center;
+            top: 0;
+            left: 0;
+            height: 0;
+            width: calc(100% - 50px);
+            -webkit-transition: all 0.35s;
+            -o-transition: all 0.35s;
+            transition: all 0.35s;
+            transition-delay: .6s; }
+          .news .container .block .wrapper .picture .cover, .events .container .block .wrapper .picture .cover {
+            transition-delay: .35s;
+            background-color: #2d3239; }
+        .news .container .block .wrapper .text, .events .container .block .wrapper .text {
+          width: 33.33333%;
+          font-family: 'neuzeit-grotesk';
+          display: flex;
+          flex-direction: column; }
+          .news .container .block .wrapper .text p, .events .container .block .wrapper .text p {
+            font-family: "adriane", serif;
+            color: rgba(0, 0, 0, 0.5); }
+          .news .container .block .wrapper .text .link, .events .container .block .wrapper .text .link {
+            color: #000;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 20px;
+            font-size: 14px; }
+      .news .container .block.visible, .events .container .block.visible {
+        opacity: 1;
+        transform: translateY(0); }
+        .news .container .block.visible .wrapper .picture .cover,
+        .news .container .block.visible .wrapper .picture .img, .events .container .block.visible .wrapper .picture .cover,
+        .events .container .block.visible .wrapper .picture .img {
+          height: 100%; }
 
-.news .container {
-  display: flex;
-  flex-direction: column; }
-
-.news .container .block {
-  width: 100%;
-  margin-bottom: 150px;
-  display: block;
-  text-decoration: none;
-  color: black;
-  padding: 50px 0;
-  opacity: 0;
-  translate: translateY(100px);
-  -webkit-transition: all 0.8s;
-  -o-transition: all 0.8s;
-  transition: all 0.8s; }
-
-.news .container .block .wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center; }
-
-.news .container .block .wrapper .picture {
-  position: relative;
-  width: 66.6666%;
-  padding-right: 50px;
-  height: 350px; }
-
-.news .container .block .wrapper .picture .img,
-.news .container .block .wrapper .picture .cover {
-  position: absolute;
-  background-size: cover;
-  background-position: center;
-  top: 0;
-  left: 0;
-  height: 0;
-  width: calc(100% - 50px);
-  -webkit-transition: all 0.35s;
-  -o-transition: all 0.35s;
-  transition: all 0.35s;
-  transition-delay: .6s; }
-
-.news .container .block .wrapper .picture .cover {
-  transition-delay: .35s;
-  background-color: #2d3239; }
-
-.news .container .block .wrapper .text {
-  width: 33.33333%;
-  font-family: 'neuzeit-grotesk';
-  display: flex;
-  flex-direction: column; }
-
-.news .container .block .wrapper .text p {
-  font-family: "adriane", serif;
-  color: rgba(0, 0, 0, 0.5); }
-
-.news .container .block .wrapper .text .link {
-  color: #000;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-top: 20px;
-  font-size: 14px; }
-
-.news .container .block.visible {
-  opacity: 1;
-  transform: translateY(0); }
-
-.news .container .block.visible .wrapper .picture .cover,
-.news .container .block.visible .wrapper .picture .img {
-  height: 100%; }
-
+.article {
+  padding: 50px; }
+  .article .container {
+    max-width: 720px;
+    margin: 0 auto; }
+    .article .container h4 {
+      font-size: 20px; }
+    .article .container p {
+      font-size: 18px; }
+    .article .container blockquote {
+      position: relative;
+      padding-bottom: 50px;
+      font-style: italic; }
+      .article .container blockquote .signature {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 200px;
+        font-weight: 700; }
+    .article .container .img {
+      width: calc(100% - 100px);
+      padding: 50px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -540,97 +540,89 @@
 
 
 
-.news {
+.news, .events {
     width: 960px;
     margin: 0 auto;
     margin-bottom: 150px;
-}
 
-.news .container {
-    display: flex;
-    flex-direction: column;
-}
+    .container {
+        display: flex;
+        flex-direction: column;
 
-.news .container .block {
-    width: 100%;
-    margin-bottom: 150px;
-    display: block;
-    text-decoration: none;
-    color: black;
-    padding: 50px 0;
-    opacity: 0;
-    translate: translateY(100px);
+        .block {
+            width: 100%;
+            margin-bottom: 150px;
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 50px 0;
+            opacity: 0;
+            translate: translateY(100px);
 
-    @include basic-transition(.8, 'ease');
-}
+            @include basic-transition(.8, 'ease');
 
-.news .container .block .wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
+            .wrapper {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
 
-.news .container .block .wrapper .picture {
-    position: relative;
-    width: 66.6666%;
-    padding-right: 50px;
-    height: 350px;
-}
+                .picture {
+                    position: relative;
+                    width: 66.6666%;
+                    padding-right: 50px;
+                    height: 350px;
 
+                    .img, .cover {
+                        position: absolute;
+                        background-size: cover;
+                        background-position: center;
+                        top: 0;
+                        left: 0;
+                        height: 0;
+                        width: calc(100% - 50px);
 
+                        @include basic-transition(.35, 'ease');
+                        transition-delay: .6s;
+                    }
 
-.news .container .block .wrapper .picture .img,
-.news .container .block .wrapper .picture .cover {
-    position: absolute;
-    background-size: cover;
-    background-position: center;
-    top: 0;
-    left: 0;
-    height: 0;
-    width: calc(100% - 50px);
+                    .cover {
+                        transition-delay: .35s;
+                        background-color: $primary-color;
+                    } 
+                }
 
-    @include basic-transition(.35, 'ease');
-    transition-delay: .6s;
-}
+                .text {
+                    width: 33.33333%;
+                    font-family: 'neuzeit-grotesk';
+                    display: flex;
+                    flex-direction: column;
 
-.news .container .block .wrapper .picture .cover {
-    transition-delay: .35s;
-    background-color: $primary-color;
-} 
+                    p {
+                        font-family: "adriane", serif;
+                        color: rgba(0,0,0,.5)
+                    }
 
-.news .container .block .wrapper .text {
-    width: 33.33333%;
-    font-family: 'neuzeit-grotesk';
-    display: flex;
-    flex-direction: column;
-}
+                    .link {
+                        color: #000;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        margin-top: 20px;
+                        font-size: 14px;
+                    }
+                }
+            }
 
-.news .container .block .wrapper .text p {
-    font-family: "adriane", serif;
-    color: rgba(0,0,0,.5)
-}
+            &.visible {
+                opacity: 1;
+                transform: translateY(0);
 
-.news .container .block .wrapper .text .link {
-    color: #000;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-top: 20px;
-    font-size: 14px;
-}
-
-
-.news .container .block.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.news .container .block.visible .wrapper .picture .cover,
-.news .container .block.visible .wrapper .picture .img {
-    height: 100%;
-}
-
-@for $i from 1 to 13 {
-    .col-#{$i} {
-        width: $i*8.333333%;
+                .wrapper .picture .cover,
+                .wrapper .picture .img {
+                    height: 100%;
+                }
+            }
+        }
     }
 }
+
+@import './components/article.scss'
